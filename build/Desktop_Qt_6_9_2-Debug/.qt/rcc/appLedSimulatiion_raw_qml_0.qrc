@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/LedSimulatiion/">
+    <file alias="main.qml">/home/mahmoud/workspace/qt/LedSimulatiion/main.qml</file>
+  </qresource>
+</RCC>
+

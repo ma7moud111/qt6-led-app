@@ -1,0 +1,5 @@
+module LedSimulatiion
+typeinfo appLedSimulatiion.qmltypes
+prefer :/LedSimulatiion/
+depends QtQuick
+

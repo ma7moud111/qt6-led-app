@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_appLedSimulatiion_FILE /home/mahmoud/workspace/qt/LedSimulatiion/build/Desktop_Qt_6_9_2-Debug/appLedSimulatiion)
+set(__QT_DEPLOY_TARGET_appLedSimulatiion_TYPE EXECUTABLE)
