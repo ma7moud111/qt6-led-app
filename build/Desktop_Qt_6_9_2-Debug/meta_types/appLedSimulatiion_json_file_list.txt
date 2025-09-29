@@ -1,1 +1,0 @@
-/home/mahmoud/workspace/qt/LedSimulatiion/build/Desktop_Qt_6_9_2-Debug/appLedSimulatiion_autogen/include/../EWIEGA46WW/moc_LedController.cpp.json
