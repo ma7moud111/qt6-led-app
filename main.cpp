@@ -3,26 +3,11 @@
 #include <QQmlContext>
 #include "LedController.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
-
-    LedController ledController;
-
-
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextProperty("ledController", &ledController);
-    const QUrl url(QStringLiteral("qrc:/LedSimulatiion/main.qml"));
-    QObject::connect(
-        &engine,
-        &QQmlApplicationEngine::objectCreated,
-        &app,
-        [url](QObject *obj, const QUrl &objUrl) {
-            if (!obj && url == objUrl)
-                QCoreApplication::exit(-1);
-        },
-        Qt::QueuedConnection);
-    engine.load(url);
-
+    LedController controller;
+    engine.rootContext()->setContextProperty("ledController", &controller);
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     return app.exec();
 }

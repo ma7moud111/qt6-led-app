@@ -1,26 +1,27 @@
-#ifndef LEDCONTROLLER_H
-#define LEDCONTROLLER_H
-
+#pragma once
 #include <QObject>
+#include "led.h"
 
 class LedController : public QObject {
     Q_OBJECT
-    Q_PROPERTY(bool ledOn READ ledOn WRITE setLedOn NOTIFY ledOnChanged)
+    Q_PROPERTY(bool on READ isOn NOTIFY onChanged)
+    Q_PROPERTY(bool switchPressed READ switchPressed NOTIFY switchChanged)
+   public:
+    explicit LedController(QObject* parent=nullptr);
 
-public:
-    explicit LedController(QObject *parent = nullptr);
+    Q_INVOKABLE void setOn(bool on);
+    Q_INVOKABLE void toggleFromSwitch(); // calls task.act_on_led()
+    Q_INVOKABLE bool refreshSwitch();    // polls switch into property
 
-    bool ledOn() const { return m_ledOn; }
-    void setLedOn(bool on);
+    bool isOn() const { return m_on; }
+    bool switchPressed() const { return m_switch; }
 
-public slots:
-    void toggleLed();
+   signals:
+    void onChanged();
+    void switchChanged();
 
-signals:
-    void ledOnChanged(bool);
-
-private:
-    bool m_ledOn = false;
+   private:
+    Task m_task;
+    bool m_on=false;
+    bool m_switch=false;
 };
-
-#endif // LEDCONTROLLER_H
