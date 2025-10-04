@@ -13,7 +13,7 @@
 */
 class LedGpio27Pin {
    private:
-    const int offset = 512;
+    const int offset = 0;
     const std::string gpio27_path = "/sys/class/gpio/gpio" + std::to_string((27 + offset)) + "/";
 
    protected:
@@ -37,7 +37,7 @@ class LedGpio27Pin {
 
 class SwitchGpio17Pin {
    private:
-    const int offset = 512;
+    const int offset = 0;
     const std::string gpio17_path = "/sys/class/gpio/gpio" + std::to_string((17 + offset)) + "/";
 
    protected:
